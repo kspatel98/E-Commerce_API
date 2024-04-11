@@ -1,0 +1,19 @@
+GET http://localhost:3000/products
+
+###
+GET http://localhost:3000/products/936
+
+###
+
+POST http://localhost:3000/products
+Content-Type: "application/json"
+
+{
+    "name": "iPhone 15 pro",
+    "price": 1600.0,
+    "description": "Apple iPhone 15 Pro mobile was launched on 12th September 2023. The phone comes with a 120 Hz refresh rate 6.10-inch touchscreen display offering a resolution of 1179x2556 pixels at a pixel density of 460 pixels per inch (ppi).",
+    "images": ["jghj","iuhyui"],
+    "isFeatured": true ,
+    "merchantName": "Kartik Patel",
+    "merchantLocation": "Hamilton,ON Canada" 
+}
