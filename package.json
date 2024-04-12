@@ -4,6 +4,7 @@
   "description": "REST-API for products",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "devStart": "nodemon server.js"
   },
   "author": "Kartik Patel",
