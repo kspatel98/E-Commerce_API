@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
         if (Array.isArray(req.body)) {
             
             const products = req.body.map(product => {
-                if (!product.name || !product.price || !product.description || !product.images || !product.isFeatured || !product.merchantName || !product.merchantLocation) {
+                if (!product.name || !product.price || !product.description || !product.images || !product.merchantName || !product.merchantLocation) {
                     return res.status(400).json({ message: "Name, price, description, images, isFeatured, merchantName, and merchantLocation are required fields." });
                 }
                 return new Product({
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
             res.status(201).json(newProducts)
         }
         else {
-            if (!req.body.name || !req.body.price || !req.body.description || !req.body.images || !req.body.isFeatured || !req.body.merchantName || !req.body.merchantLocation) {
+            if (!req.body.name || !req.body.price || !req.body.description || !req.body.images || !req.body.merchantName || !req.body.merchantLocation) {
                 return res.status(400).json({ message: "Name, price, description, images, isFeatured, merchantName, and merchantLocation are required fields." });
             }
             const product = new Product({
@@ -81,7 +81,7 @@ router.patch('/:id', getProducts, async (req, res) => {
     if (req.body.images != null) {
         res.product.images = req.body.images
     }
-    if (req.body.isFeatured != null) {
+    if (req.body.isFeatured==true || req.body.isFeatured==false) {
         res.product.isFeatured = req.body.isFeatured
     }
     if (req.body.merchantName != null) {
