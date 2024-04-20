@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Product = require('../models/product')
+const searchProductsRouter=require('../routes/searchProducts');
+router.use('/search',searchProductsRouter);
 //Getting all
 router.get('/', async (req, res) => {
     try {
