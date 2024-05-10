@@ -4,8 +4,8 @@ const router=express.Router();
 
 router.get("/",async(req,res)=>{
     try {
-        const name=req.body.name;
-        const result=await Product.find({"name":{$regex:".*"+name+".*",$options:"i"}});
+        const search=req.body.search;
+        const result=(await Product.find({"name":{$regex:".*"+search+".*",$options:"i"}})).concat(await Product.find({"category":{$regex:".*"+search+".*",$options:"i"}}));
         if(result.length>0)
         {
             res.status(200).send({message:"Products found successfully...",data:result});

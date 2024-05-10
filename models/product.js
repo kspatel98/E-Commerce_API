@@ -1,3 +1,4 @@
+const { type } = require("express/lib/response")
 const mongoose=require("mongoose")
 
 const productSchema=new mongoose.Schema({
@@ -12,6 +13,14 @@ const productSchema=new mongoose.Schema({
     description:{
         type: String,
         required: true
+    },
+    brand:{
+        type: String,
+        required: true
+    },
+    category:{
+        type: String,
+        require: true
     },
     images:{
         type: [String],
